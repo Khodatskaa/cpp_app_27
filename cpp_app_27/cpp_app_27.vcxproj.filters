@@ -4,5 +4,27 @@
     <Filter Include="SourceFiles">
       <UniqueIdentifier>{2934b655-9567-4c4f-9caa-75a1a4780cfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Student">
+      <UniqueIdentifier>{e0c45a99-b139-4e0c-ba47-efd6889d7c76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StudentManager">
+      <UniqueIdentifier>{6f2e1ba4-994e-426e-9d27-e32bfcb7e432}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>Student</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Student.h">
+      <Filter>Student</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentManager.h">
+      <Filter>StudentManager</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
