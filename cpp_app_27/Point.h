@@ -11,18 +11,20 @@ private:
     static double z;
 
 public:
-    Point();
-    Point(double x, double y, double z);
+    Point() = default;
 
-    void inputCoordinates();
-    void displayCoordinates() const;
+    Point(double x, double y, double z) : x(x), y(y), z(z) {}
 
-    static double getX();
-    static double getY();
-    static double getZ();
+    inline void inputCoordinates();
+    inline void displayCoordinates() const;
 
-    static void saveToFile(const std::string& filename);
-    static void loadFromFile(const std::string& filename);
+    inline static double getX() { return x; }
+    inline static double getY() { return y; }
+    inline static double getZ() { return z; }
+
+    inline static void saveToFile(const std::string& filename);
+    inline static void loadFromFile(const std::string& filename);
 };
 
-#endif 
+#endif
+

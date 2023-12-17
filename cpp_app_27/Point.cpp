@@ -4,41 +4,23 @@ double Point::x = 0.0;
 double Point::y = 0.0;
 double Point::z = 0.0;
 
-Point::Point() {}
-
-Point::Point(double x, double y, double z)
-{
-}
-
-void Point::inputCoordinates() {
+inline void Point::inputCoordinates() {
     std::cout << "Enter x-coordinate: ";
-    std::cin >> Point::x;
+    std::cin >> x;
     std::cout << "Enter y-coordinate: ";
-    std::cin >> Point::y;
+    std::cin >> y;
     std::cout << "Enter z-coordinate: ";
-    std::cin >> Point::z;
+    std::cin >> z;
 }
 
-void Point::displayCoordinates() const {
-    std::cout << "Coordinates: (" << Point::x << ", " << Point::y << ", " << Point::z << ")\n";
+inline void Point::displayCoordinates() const {
+    std::cout << "Coordinates: (" << x << ", " << y << ", " << z << ")\n";
 }
 
-double Point::getX() {
-    return Point::x;
-}
-
-double Point::getY() {
-    return Point::y;
-}
-
-double Point::getZ() {
-    return Point::z;
-}
-
-void Point::saveToFile(const std::string& filename) {
+inline void Point::saveToFile(const std::string& filename) {
     std::ofstream outFile(filename);
     if (outFile.is_open()) {
-        outFile << Point::x << " " << Point::y << " " << Point::z << "\n";
+        outFile << x << " " << y << " " << z << "\n";
         outFile.close();
         std::cout << "Data saved to file successfully\n";
     }
@@ -47,10 +29,10 @@ void Point::saveToFile(const std::string& filename) {
     }
 }
 
-void Point::loadFromFile(const std::string& filename) {
+inline void Point::loadFromFile(const std::string& filename) {
     std::ifstream inFile(filename);
     if (inFile.is_open()) {
-        inFile >> Point::x >> Point::y >> Point::z;
+        inFile >> x >> y >> z;
         inFile.close();
         std::cout << "Data loaded from file successfully\n";
     }
