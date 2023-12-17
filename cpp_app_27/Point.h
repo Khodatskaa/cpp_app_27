@@ -13,7 +13,7 @@ private:
 public:
     Point() = default;
 
-    Point(double x, double y, double z) : x(x), y(y), z(z) {}
+    Point(double x, double y, double z);
 
     inline void inputCoordinates();
     inline void displayCoordinates() const;
@@ -27,4 +27,3 @@ public:
 };
 
 #endif
-

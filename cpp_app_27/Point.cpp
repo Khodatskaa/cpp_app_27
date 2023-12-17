@@ -4,6 +4,9 @@ double Point::x = 0.0;
 double Point::y = 0.0;
 double Point::z = 0.0;
 
+Point::Point(double x, double y, double z) {
+}
+
 inline void Point::inputCoordinates() {
     std::cout << "Enter x-coordinate: ";
     std::cin >> x;
