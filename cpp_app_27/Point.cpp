@@ -43,7 +43,7 @@ void Point::saveToFile(const std::string& filename) {
         std::cout << "Data saved to file successfully\n";
     }
     else {
-        std::cerr << "Unable to open the file for writing\n";
+        std::cout << "Unable to open the file for writing\n";
     }
 }
 
@@ -55,6 +55,7 @@ void Point::loadFromFile(const std::string& filename) {
         std::cout << "Data loaded from file successfully\n";
     }
     else {
-        std::cerr << "Unable to open the file for reading\n";
+        std::cout << "Unable to open the file for reading\n";
     }
 }
+
