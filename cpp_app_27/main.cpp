@@ -1,12 +1,19 @@
 #include "Student.h"
 
 int main() {
+    Student student1;
+    Student student2;
 
-    Student student;
+    student1.inputStudentData();
+    student2.inputStudentData();
 
-    student.inputData();
+    cout << "\nStudent 1 Information:\n";
+    student1.displayStudentData();
 
-    student.outputData();
+    cout << "\nStudent 2 Information:\n";
+    student2.displayStudentData();
+
+    cout << "\nTotal Students: " << Student::getStudentCount() << endl;
 
     return 0;
 }
