@@ -1,17 +1,27 @@
 #include "Point.h"
+#include <iostream>
 
 int main() {
-    Point p1;
-    p1.inputCoordinates();
-    p1.displayCoordinates();
+    Point point1;
+    Point point2;
 
-    Point p2(1.0, 2.0, 3.0);
-    p2.displayCoordinates();
+    point1.inputPointData();
+    point2.inputPointData();
 
-    Point::saveToFile("point.txt");
-    Point::loadFromFile("point.txt");
-    p2.displayCoordinates();
+    std::cout << "\nPoint 1 Data:\n";
+    point1.displayPointData();
+
+    std::cout << "\nPoint 2 Data:\n";
+    point2.displayPointData();
+
+    point1.saveToFile("point_data.txt");
+
+    Point newPoint;
+    newPoint.loadFromFile("point_data.txt");
+    std::cout << "\nLoaded Point Data:\n";
+    newPoint.displayPointData();
+
+    std::cout << "\nTotal Points Created: " << Point::getPointCount() << std::endl;
 
     return 0;
 }
-
