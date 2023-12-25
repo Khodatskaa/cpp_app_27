@@ -10,16 +10,17 @@ private:
     double x, y, z;
 
 public:
-    Point();
-    Point(double x, double y, double z);
-    void inputPointData();
-    void displayPointData() const;
-    void saveToFile(const std::string& filename) const;
-    void loadFromFile(const std::string& filename);
+    Point(); 
+    Point(double x, double y, double z); 
 
-    double getX() const;
-    double getY() const;
-    double getZ() const;
+    inline void inputPointData();
+    inline void displayPointData() const;
+    inline void saveToFile(const std::string& filename) const;
+    inline void loadFromFile(const std::string& filename);
+
+    inline double getX() const { return x; }
+    inline double getY() const { return y; }
+    inline double getZ() const { return z; }
 
     static int getPointCount();
 };
