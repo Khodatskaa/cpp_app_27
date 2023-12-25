@@ -1,101 +1,81 @@
 #include "Student.h"
 
-int Student::studentCount = 0; 
+int Student::studentCount = 0;
 
-Student::Student() : groupNumber(0) {
+Student::Student() : name(nullptr), groupNumber(0) {
     studentCount++;
 }
 
+Student::Student(const std::string& name, const std::string& dateOfBirth, const std::string& contactPhone,
+    const std::string& city, const std::string& country, const std::string& universityName,
+    const std::string& universityCity, const std::string& universityCountry, int groupNumber)
+    : dateOfBirth(dateOfBirth), contactPhone(contactPhone), city(city), country(country),
+    universityName(universityName), universityCity(universityCity), universityCountry(universityCountry),
+    groupNumber(groupNumber) {
+    this->name = new std::string(name);
+    studentCount++;
+}
+
+Student::~Student() {
+    delete name;
+    studentCount--;
+}
+
 void Student::inputStudentData() {
-    cout << "Enter student details:\n";
-    cout << "Name: ";
-    getline(std::cin, name);
-
-    cout << "Date of Birth: ";
-    getline(std::cin, dateOfBirth);
-
-    cout << "Contact Phone: ";
-    getline(std::cin, contactPhone);
-
-    cout << "City: ";
-    getline(std::cin, city);
-
-    cout << "Country: ";
-    getline(std::cin, country);
-
-    cout << "University Name: ";
-    getline(std::cin, institutionName);
-
-    cout << "University City: ";
-    getline(std::cin, institutionCity);
-
-    cout << "University Country: ";
-    getline(std::cin, institutionCountry);
-
-    cout << "Group Number: ";
-    cin >> groupNumber;
-    cin.ignore(); 
+    std::cout << "Enter student name: ";
+    std::cin >> *name;
+    std::cout << "Enter group number: ";
+    std::cin >> groupNumber;
 }
 
 void Student::displayStudentData() const {
-    cout << "Student Details:\n";
-    cout << "Name: " << name << "\n";
-    cout << "Date of Birth: " << dateOfBirth << "\n";
-    cout << "Contact Phone: " << contactPhone << "\n";
-    cout << "City: " << city << "\n";
-    cout << "Country: " << country << "\n";
-    cout << "University Name: " << institutionName << "\n";
-    cout << "University City: " << institutionCity << "\n";
-    cout << "University Country: " << institutionCountry << "\n";
-    cout << "Group Number: " << groupNumber << "\n";
+    std::cout << "Student Name: " << *name << "\n"
+        << "Date of Birth: " << dateOfBirth << "\n"
+        << "Contact Phone: " << contactPhone << "\n"
+        << "City: " << city << "\n"
+        << "Country: " << country << "\n"
+        << "University Name: " << universityName << "\n"
+        << "University City: " << universityCity << "\n"
+        << "University Country: " << universityCountry << "\n"
+        << "Group Number: " << groupNumber << "\n";
 }
 
-string Student::getName() const
-{
-    return string();
+std::string Student::getName() const {
+    return *name;
 }
 
-string Student::getDateOfBirth() const
-{
-    return string();
+std::string Student::getDateOfBirth() const {
+    return dateOfBirth;
 }
 
-string Student::getContactPhone() const
-{
-	return string();
+std::string Student::getContactPhone() const {
+    return contactPhone;
 }
 
-string Student::getCity() const
-{
-	return string();
+std::string Student::getCity() const {
+    return city;
 }
 
-string Student::getCountry() const
-{
-	return string();
+std::string Student::getCountry() const {
+    return country;
 }
 
-string Student::getUniversityName() const
-{
-	return string();
+std::string Student::getUniversityName() const {
+    return universityName;
 }
 
-string Student::getUniversityCity() const
-{
-	return string();
+std::string Student::getUniversityCity() const {
+    return universityCity;
 }
 
-string Student::getUniversityCountry() const
-{
-	return string();
+std::string Student::getUniversityCountry() const {
+    return universityCountry;
 }
 
-int Student::getGroupNumber() const
-{
-	return 0;
+int Student::getGroupNumber() const {
+    return groupNumber;
 }
 
 int Student::getStudentCount() {
     return studentCount;
 }
-

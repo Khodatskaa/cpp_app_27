@@ -1,40 +1,45 @@
+// Student.h
 #ifndef STUDENT_H
 #define STUDENT_H
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 class Student {
 private:
-    static int studentCount; 
-    std::string name;
+    static int studentCount;
+    std::string* name;
     std::string dateOfBirth;
     std::string contactPhone;
     std::string city;
     std::string country;
-    std::string institutionName;
-    std::string institutionCity;
-    std::string institutionCountry;
+    std::string universityName; 
+    std::string universityCity; 
+    std::string universityCountry; 
     int groupNumber;
 
 public:
     Student();
-    void inputStudentData();
-    void displayStudentData() const;
+    Student(const std::string& name, const std::string& dateOfBirth, const std::string& contactPhone,
+        const std::string& city, const std::string& country, const std::string& universityName, 
+        const std::string& universityCity, const std::string& universityCountry, int groupNumber);
 
-    std::string getName() const;
-    std::string getDateOfBirth() const;
-    std::string getContactPhone() const;
-    std::string getCity() const;
-    std::string getCountry() const;
-    std::string getUniversityName() const;
-    std::string getUniversityCity() const;
-    std::string getUniversityCountry() const;
-    int getGroupNumber() const;
+    ~Student();
 
-    static int getStudentCount();
+    inline void inputStudentData();
+    inline void displayStudentData() const;
+
+    inline std::string getName() const;
+    inline std::string getDateOfBirth() const;
+    inline std::string getContactPhone() const;
+    inline std::string getCity() const;
+    inline std::string getCountry() const;
+    inline std::string getUniversityName() const;
+    inline std::string getUniversityCity() const; 
+    inline std::string getUniversityCountry() const; 
+    inline int getGroupNumber() const;
+
+    inline static int getStudentCount();
 };
 
 #endif 
-
