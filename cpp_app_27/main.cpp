@@ -2,37 +2,29 @@
 #include <iostream>
 
 int main() {
-    Fraction fraction1 = Fraction::inputFraction();
-    Fraction fraction2 = Fraction::inputFraction();
+    Fraction fraction1(1, 2);
+    Fraction fraction2(1, 5);
 
-    Fraction sum = Fraction::add(fraction1, fraction2);
-    Fraction difference = Fraction::subtract(fraction1, fraction2);
-    Fraction product = Fraction::multiply(fraction1, fraction2);
-    Fraction quotient = Fraction::divide(fraction1, fraction2);
-
-    std::cout << "Fraction 1: ";
     fraction1.display();
-    std::cout << std::endl;
-
-    std::cout << "Fraction 2: ";
     fraction2.display();
-    std::cout << std::endl;
 
-    std::cout << "Sum: ";
-    sum.display();
-    std::cout << std::endl;
+    fraction1.add(fraction2);
+    std::cout << "After addition: ";
+    fraction1.display();
 
-    std::cout << "Difference: ";
-    difference.display();
-    std::cout << std::endl;
+    fraction1.subtract(fraction2);
+    std::cout << "After subtraction: ";
+    fraction1.display();
 
-    std::cout << "Product: ";
-    product.display();
-    std::cout << std::endl;
+    fraction1.multiply(fraction2);
+    std::cout << "After multiplication: ";
+    fraction1.display();
 
-    std::cout << "Quotient: ";
-    quotient.display();
-    std::cout << std::endl;
+    fraction1.divide(fraction2);
+    std::cout << "After division: ";
+    fraction1.display();
+
+    std::cout << "Instance count: " << Fraction::getInstanceCount() << std::endl;
 
     return 0;
 }

@@ -1,30 +1,24 @@
 #ifndef FRACTION_H
 #define FRACTION_H
 
+#include <iostream>
+
 class Fraction {
 private:
+    static int instanceCount; 
     int numerator;
     int denominator;
 
 public:
     Fraction();
-    Fraction(int num, int denom);
-
-    int getNumerator() const;
-    int getDenominator() const;
-    void setNumerator(int num);
-    void setDenominator(int denom);
-
-    static Fraction add(const Fraction& a, const Fraction& b);
-    static Fraction subtract(const Fraction& a, const Fraction& b);
-    static Fraction multiply(const Fraction& a, const Fraction& b);
-    static Fraction divide(const Fraction& a, const Fraction& b);
-
-    void simplify();
-
+    Fraction(int num, int den);
+    void setFraction(int num, int den);
+    void add(const Fraction& other);
+    void subtract(const Fraction& other);
+    void multiply(const Fraction& other);
+    void divide(const Fraction& other);
     void display() const;
-
-    static Fraction inputFraction();
+    static int getInstanceCount(); 
 };
 
 #endif 
