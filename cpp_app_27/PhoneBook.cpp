@@ -9,19 +9,14 @@ Phonebook::~Phonebook() {
 
 void Phonebook::addContact(const Contact& contact) {
     if (size == capacity) {
-        int newCapacity = (capacity == 0) ? 1 : capacity * 2;
-        Contact* newContacts = new Contact[newCapacity];
-
+        capacity = capacity == 0 ? 1 : capacity * 2;
+        Contact* newContacts = new Contact[capacity];
         for (int i = 0; i < size; ++i) {
             newContacts[i] = contacts[i];
         }
-
         delete[] contacts;
-
-        capacity = newCapacity;
         contacts = newContacts;
     }
-
     contacts[size++] = contact;
 }
 
