@@ -5,20 +5,24 @@
 
 class Fraction {
 private:
-    static int instanceCount; 
+    static int instanceCount;
     int numerator;
     int denominator;
 
 public:
     Fraction();
     Fraction(int num, int den);
-    void setFraction(int num, int den);
-    void add(const Fraction& other);
-    void subtract(const Fraction& other);
-    void multiply(const Fraction& other);
-    void divide(const Fraction& other);
-    void display() const;
-    static int getInstanceCount(); 
+
+    inline void setFraction(int num, int den);
+    inline void add(const Fraction& other);
+    inline void subtract(const Fraction& other);
+    inline void multiply(const Fraction& other);
+    inline void divide(const Fraction& other);
+    inline void display() const;
+
+    inline static int getInstanceCount();
+
+    ~Fraction();
 };
 
 #endif 
